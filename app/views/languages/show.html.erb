@@ -10,9 +10,6 @@
   <%= @language.user_id %>
 </p>
 
-<p> <strong>Likes:</strong>
-<%= @language.liked_by.length %>
-</p>
 
 
 <% unless @language.interest_from.exists?(current_user) %> |
