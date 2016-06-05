@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   resources :languages
   devise_for :users
   root "statics#homepage"
-  
+  # get 'languages/interest/:id', to: "languages#interest", as: "interested"
+  # get 'languages/remove_interest/:id', to: "remove_interest", as: "removed_interest"
 
-  get 'users/show'
+  # get 'users/:id', to: "users#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

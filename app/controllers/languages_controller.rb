@@ -3,6 +3,27 @@ class LanguagesController < ApplicationController
 
   # GET /languages
   # GET /languages.json
+  def interest
+
+    language = Language.find(params[:id])
+
+    current_user.language_interest.push(language)
+
+    redirect_to language
+   
+  end
+
+  def remove_interest
+
+    language = Language.find(params[:id])
+
+    current_user.language_interest.destroy(language)
+
+    redirect_to language
+   
+  end
+
+
   def index
     @languages = Language.all
   end

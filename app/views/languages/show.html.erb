@@ -10,5 +10,17 @@
   <%= @language.user_id %>
 </p>
 
+<p> <strong>Likes:</strong>
+<%= @language.liked_by.length %>
+</p>
+
+
+<% unless @language.interest_from.exists?(current_user) %> |
+<%= link_to 'Interested', interested_path(@language) %> |
+<% else %>
+<%= link_to 'Remove interest', removed_interest_path(@language) %> |
+<% end %>
+
+<%= link_to 'Like', interested_path(@language) %> |
 <%= link_to 'Edit', edit_language_path(@language) %> |
 <%= link_to 'Back', languages_path %>
