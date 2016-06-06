@@ -10,6 +10,12 @@
   <%= @language.user_id %>
 </p>
 
+<!--  show the array of those interested-->
+<% @language.interest_from.each do |user| %>
+  <ul>
+    <li><%= user.username %></li>
+  </ul>
+<% end %>
 
 
 <% unless @language.interest_from.exists?(current_user) %> |
