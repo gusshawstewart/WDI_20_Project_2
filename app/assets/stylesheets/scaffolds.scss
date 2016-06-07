@@ -1,9 +1,15 @@
+
+
 body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+li {
+    display: inline;
 }
 
 p, ol, ul, td {
@@ -71,3 +77,5 @@ div {
     list-style: square;
   }
 }
+
+

@@ -13,7 +13,7 @@
 <!--  show the array of those interested-->
 <% @language.interest_from.each do |user| %>
   <ul>
-    <li><%= user.username %></li>
+    <li><a href= '/users/<%= user.id %>'><%= user.username    %></a></li> 
   </ul>
 <% end %>
 
