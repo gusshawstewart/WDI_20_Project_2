@@ -48,7 +48,10 @@ class LanguagesController < ApplicationController
   # POST /languages
   # POST /languages.json
   def create
-    @language = Language.new(language_params)
+    # @language = Language.new(language_params)
+    # @language.user_id = current_user
+
+    @language = current_user.languages.new(language_params)
 
     respond_to do |format|
       if @language.save
