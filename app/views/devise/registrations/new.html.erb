@@ -56,8 +56,8 @@
 
     <div class= "want_to_learn">
         <div class="field">
-          <%= f.label :language_ids %><br />
-          <%= f.collection_check_boxes :language_ids, Language.all, :id, :language do |b| %>
+          <%= f.label :learning_ids %><br />
+          <%= f.collection_check_boxes :learning_ids, Language.all, :id, :language do |b| %>
             <div class="collection-check-box">
               <%= b.check_box %>
               <%= b.label %>
