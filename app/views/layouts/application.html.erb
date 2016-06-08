@@ -25,6 +25,8 @@
                     <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
                     <li class="nav-item"><%= link_to "Edit Profile", edit_user_registration_path %></li>
                     <li class="nav-item"><%= link_to "Lesson Wall", languages_path %></li>
+                    <li class="nav-item"><%= link_to "Inbox", messages_path %></li>
+                    <li class="nav-item"><%= link_to "Sent Items", messages_path %></li>
 
                   <% else %>
                     <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li>

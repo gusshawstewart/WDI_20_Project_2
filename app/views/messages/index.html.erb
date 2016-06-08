@@ -5,9 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Content</th>
-      <th>Sender</th>
-      <th>Receiver</th>
+      <th>Received Messages</th>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,17 +14,41 @@
   <tbody>
 
     <% @messages.each do |message| %>
-      <% if current_user == message.receiver_id  %>
+      <% if current_user == message.sender_id  %>
       <tr>
         <td><%= message.content %></td>
-        <td><%= message.sender_id %></td>
-        <td><%= message.receiver_id %></td>
         <td><%= link_to 'Show', message %></td>
-        <td><%= link_to 'Edit', edit_message_path(message) %></td>
         <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+
       <% end %>
      <% end %>
+  
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sent Messages</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @messages.each do |message| %>
+      <% if current_user != message.receiver_id  %>
+      <tr>
+        <td><%= message.content %></td>
+        <td><%= link_to 'Show', message %></td>
+        <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+      <% end %>
+     <% end %>
+
   </tbody>
 </table>
 
