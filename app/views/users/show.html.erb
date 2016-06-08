@@ -13,6 +13,11 @@
         </p>
 
         <p>
+           <b>Image:</b>
+           <%= image_tag @user.graffiti_image.url %>
+         </p>
+
+        <p>
           <strong>About:</strong>
           <%= @user.bio %>
         </p>
@@ -38,6 +43,8 @@
             <li><%= learn.language %></li>
           <% end %>
         </ul>
+
+
 
 <% unless current_user == User.find(params[:id]) %>
   <%= render 'messages/form' %>

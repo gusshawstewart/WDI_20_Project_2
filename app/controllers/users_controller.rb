@@ -8,4 +8,8 @@ class UsersController < ApplicationController
 
   # params.require(:user).permit(:language, )
 
+  def user_params
+    params.require(:user).permit(:name, :graffiti_image)
+  end
+
 end
