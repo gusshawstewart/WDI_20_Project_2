@@ -5,6 +5,32 @@
     <% if current_user == nil %>
     <button type="button" class="btn btn-primary btn-lg"><%= link_to "Register", new_user_registration_path %></button>
     <% end %>
+
+      <h2>People who could teach you</h2>    
+      <% @teachers.each do |user| %>
+        <div>
+          <h3><%= user.username %></h3>
+          <h5>Speaks:</h5>
+          <span>
+            <% user.languages.each do |language| %>
+              <%= language.language %>,
+            <% end %>
+          </span>
+        </div>
+      <% end %>
+
+      <h2>People who could learn from you</h2>
+      <% @learners.each do |user| %>
+        <div>
+          <h3><%= user.username %></h3>
+          <h5>Speaks:</h5>
+          <span>
+            <% user.languages.each do |language| %>
+              <%= language.language %>,
+            <% end %>
+          </span>
+        </div>
+      <% end %>
   
 
   </div>
