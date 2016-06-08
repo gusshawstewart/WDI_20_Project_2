@@ -39,7 +39,8 @@
           <% end %>
         </ul>
 
+<% unless current_user == User.find(params[:id]) %>
   <%= render 'messages/form' %>
-
+<% end %>
 
 
