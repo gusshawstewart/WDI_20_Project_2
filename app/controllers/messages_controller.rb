@@ -5,11 +5,13 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = Message.all
+    @user= User.all
   end
 
   # GET /messages/1
   # GET /messages/1.json
   def show
+   # @user= User.all
   end
 
   # GET /messages/new
@@ -29,7 +31,7 @@ class MessagesController < ApplicationController
 
     @message = Message.new(message_params)
     @message.sender = current_user
-    @message.receiver = User.find(message_params[:receiver_id])
+    
 
     puts "OHFIUHUHAIUDHIUHIUH #{@message.sender} ODQAOHFOHFOFH:AH:FAH:F"
     
