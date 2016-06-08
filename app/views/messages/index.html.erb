@@ -7,13 +7,14 @@
  <ul>
    <%= current_user.sent_messages.each do |message| %>
      <li><%= message.content %></li>
+     <li><%= message.sender.username %></li>
    <% end %>
  </ul>
 
  <ul>
    <%= current_user.received_messages.each do |message| %>
-     <li><%= message.content %></a></li>
-
+     <li><%= message.content %></li>
+     <li><%= message.sender.username %></li>
    <% end %>
  </ul>
 
