@@ -27,6 +27,17 @@
           <%= @user.email %>
         </p>
 
+        <ul>
+          <%= @user.languages.each do |lang| %>
+            <li><%= lang.language %></li>
+          <% end %>
+        </ul>
+
+        <ul>
+          <%= @user.learning.each do |learn| %>
+            <li><%= learn.language %></li>
+          <% end %>
+        </ul>
 
 
 

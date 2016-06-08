@@ -38,10 +38,45 @@
             <%= f.password_field :password_confirmation, autocomplete: "off" %>
           </div>
 
-          <div class="actions">
-            <%= f.submit "Sign up" %>
-          </div>
-        <% end %>
+         
+
+
+
+    <div class= "languages_spoken">
+        <div class="field">
+          <%= f.label :language_ids %><br />
+          <%= f.collection_check_boxes :language_ids, Language.all, :id, :language do |b| %>
+            <div class="collection-check-box">
+              <%= b.check_box %>
+              <%= b.label %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+
+    <div class= "want_to_learn">
+        <div class="field">
+          <%= f.label :language_ids %><br />
+          <%= f.collection_check_boxes :language_ids, Language.all, :id, :language do |b| %>
+            <div class="collection-check-box">
+              <%= b.check_box %>
+              <%= b.label %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+
+
+
+    
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+
 </div>
+
+
+
 
 <%= render "devise/shared/links" %>
