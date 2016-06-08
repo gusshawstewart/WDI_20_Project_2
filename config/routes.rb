@@ -1,11 +1,24 @@
 Rails.application.routes.draw do
 
+
+
   resources :languages
   devise_for :users, :controllers => { registrations: 'registrations' }
   root "statics#homepage"
   get 'languages/interest/:id', to: "languages#interest", as: "interested"
   get 'languages/remove_interest/:id', to: "languages#remove_interest", as: "removed_interest"
   get 'users/:id', to: "users#show"
+
+  resources :messages
+  get 'messages/show'
+
+  get 'messages/new'
+
+  get 'messages/edit'
+
+  get 'messages/create'
+
+  get 'messages/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
