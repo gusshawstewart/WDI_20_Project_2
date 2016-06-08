@@ -45,6 +45,31 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class= "languages_spoken">
+      <div class="field">
+        <%= f.label :language_ids %><br />
+        <%= f.collection_check_boxes :language_ids, Language.all, :id, :language do |b| %>
+          <div class="collection-check-box">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+
+  <div class= "want_to_learn">
+      <div class="field">
+        <%= f.label :learning_ids %><br />
+        <%= f.collection_check_boxes :learning_ids, Language.all, :id, :language do |b| %>
+          <div class="collection-check-box">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
