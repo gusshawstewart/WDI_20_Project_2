@@ -14,7 +14,7 @@
 
        <p>
           <b>Image:</b>
-          <%= link_to image_tag(@user.graffiti_image.thumb.url), @user.graffiti_image.url %>
+          <%= @user.graffiti_image %>
         </p>
         <p>
           <strong>About:</strong>
@@ -32,13 +32,13 @@
         </p>
 
         <ul>
-          <%= @user.languages.each do |lang| %>
+          <% @user.languages.each do |lang| %>
             <li><%= lang.language %></li>
           <% end %>
         </ul>
 
         <ul>
-          <%= @user.learning.each do |learn| %>
+          <% @user.learning.each do |learn| %>
             <li><%= learn.language %></li>
           <% end %>
         </ul>

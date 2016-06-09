@@ -1,88 +1,78 @@
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= devise_error_messages! %>
 
- <div class = "container">
-         <div class="field">
-           <%= f.label :username %><br />
-           <%= f.text_field :username %>
-         </div>
+<div class = "container">
+ <div class="field">
+   <%= f.label :username %><br />
+   <%= f.text_field :username %>
+ </div>
 
 
-         <div class="field">
-           <%= f.label :email %><br />
-           <%= f.email_field :email, autofocus: true %>
-         </div>
+ <div class="field">
+   <%= f.label :email %><br />
+   <%= f.email_field :email, autofocus: true %>
+ </div>
 
-         <div class="field">
-           <%= f.label :profile_picture %><br />
-           <%= f.text_field :profile_picture %>
-         </div>
+ <div class="field">
+   <%= f.label :graffiti_image %><br />
+   <%= f.file_field :graffiti_image %>
+ </div>
 
-         <div class="field">
-           <%= f.label :graffiti_image %><br />
-           <%= f.file_field :graffiti_image %>
-         </div>
+ <div class="field">
+   <%= f.label :bio %><br />
+   <%= f.text_field :bio %>
+ </div>
 
-         <div class="field">
-           <%= f.label :remote_graffiti_image_url %><br />
-          <%= f.text_field :remote_graffiti_image_url %>
-         </div>
+ <div class="field">
+  <%= f.label :password %>
+  <% if @minimum_password_length %>
+  <em>(<%= @minimum_password_length %> characters minimum)</em>
+  <% end %><br />
+  <%= f.password_field :password, autocomplete: "off" %>
+</div>
 
-         <div class="field">
-           <%= f.label :bio %><br />
-           <%= f.text_field :bio %>
-         </div>
-
-          <div class="field">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
-          </div>
-
-          <div class="field">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
-          </div>
-
-         
+<div class="field">
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+</div>
 
 
 
-    <div class= "languages_spoken">
-        <div class="field">
-          <%= f.label :language_ids %><br />
-          <%= f.collection_check_boxes :language_ids, Language.all, :id, :language do |b| %>
-            <div class="collection-check-box">
-              <%= b.check_box %>
-              <%= b.label %>
-            </div>
-          <% end %>
-        </div>
+
+
+<div class= "languages_spoken">
+  <div class="field">
+    <%= f.label :language_ids %><br />
+    <%= f.collection_check_boxes :language_ids, Language.all, :id, :language do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
     </div>
-
-    <div class= "want_to_learn">
-        <div class="field">
-          <%= f.label :learning_ids %><br />
-          <%= f.collection_check_boxes :learning_ids, Language.all, :id, :language do |b| %>
-            <div class="collection-check-box">
-              <%= b.check_box %>
-              <%= b.label %>
-            </div>
-          <% end %>
-        </div>
-    </div>
-
-
-
-    
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
     <% end %>
+  </div>
+</div>
+
+<div class= "want_to_learn">
+  <div class="field">
+    <%= f.label :learning_ids %><br />
+    <%= f.collection_check_boxes :learning_ids, Language.all, :id, :language do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+<div class="actions">
+  <%= f.submit "Sign up" %>
+</div>
+<% end %>
 
 </div>
 

@@ -9,16 +9,17 @@
       <h2>People who could teach you</h2>    
       <% @teachers.each do |user| %>
         <div>
-          <h3><a href= '/users/<%= user.id %>'><%= user.username %></a></h3>
-          <h5>Speaks:</h5>
-          <span>
-            <% user.languages.each do |language| %>
-              <%= language.language %>,
-            <% end %>
-          </span>
-        </div>
-      <% end %>
-
+        <ul c>
+              <h3><a href= '/users/<%= user.id %>'><%= user.username %></a></h3>
+              <h5>Speaks:</h5>
+              <span>
+                <% user.languages.each do |language| %>
+                  <%= language.language %>,
+                <% end %>
+              </span>
+            </div>
+          <% end %>
+        </ul> 
       <h2>People who could learn from you</h2>
       <% @learners.each do |user| %>
         <div>

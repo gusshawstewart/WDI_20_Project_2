@@ -4,7 +4,7 @@
 
 <h3>Inbox</h3>
  <ul>
-   <%= current_user.received_messages.each do |message| %>
+   <% current_user.received_messages.each do |message| %>
      <li class = "content"><%= message.content %></li>
      <li>From: <%= message.sender.username %></li>
      <li><a href= '/users/<%= message.sender.id %>'>Reply</a></li>
@@ -14,10 +14,9 @@
 
 <h3> Sent Items</h3>
  <ul>
-   <%= current_user.sent_messages.each do |message| %>
-     <li class = "content"><%= message.content %></li>
-     <li><%= message.receiver.username %></li>
-     
+   <% current_user.sent_messages.each do |message| %>
+     <li class="content"><%= message.content %></li>
+     <li><%= message.receiver.username %></li> 
    <% end %>
  </ul>
 
