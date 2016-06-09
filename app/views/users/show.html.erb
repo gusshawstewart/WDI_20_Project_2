@@ -12,11 +12,10 @@
           <%= @user.profile_picture %>
         </p>
 
-        <p>
-           <b>Image:</b>
-           <%= image_tag @user.graffiti_image.url %>
-         </p>
-
+       <p>
+          <b>Image:</b>
+          <%= link_to image_tag(@user.graffiti_image.thumb.url), @user.graffiti_image.url %>
+        </p>
         <p>
           <strong>About:</strong>
           <%= @user.bio %>

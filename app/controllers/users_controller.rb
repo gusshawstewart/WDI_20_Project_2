@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   # params.require(:user).permit(:language, )
 
   def user_params
-    params.require(:user).permit(:name, :graffiti_image)
+    params.require(:user).permit(:name, :graffiti_image, :remote_graffiti_image_url)
   end
 
 end
