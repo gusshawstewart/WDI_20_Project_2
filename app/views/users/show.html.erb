@@ -1,21 +1,20 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-
-
-        <p >
+<div class="user">
+        <h1>
           <strong>User:</strong>
           <%= @user.username %>
-        </p>
+        </h1>
 
         <p>
           <strong>Profile Picture:</strong>
           <%= @user.profile_picture %>
         </p>
 
-       <p>
+
+        <p>
           <b>Image:</b>
-          <%= @user.graffiti_image %>
+          <%= image_tag @user.graffiti_image.url %>
         </p>
+
         <p>
           <strong>About:</strong>
           <%= @user.bio %>
@@ -43,7 +42,7 @@
           <% end %>
         </ul>
 
-
+</div>
 
 <% unless current_user == User.find(params[:id]) %>
   <%= render 'messages/form' %>
