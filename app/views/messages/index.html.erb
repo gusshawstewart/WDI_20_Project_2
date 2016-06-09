@@ -6,8 +6,8 @@
  <ul>
    <% current_user.received_messages.each do |message| %>
      <li class = "content"><%= message.content %></li>
-     <li>From: <%= message.sender.username %></li>
-     <li><a href= '/users/<%= message.sender.id %>'>Reply</a></li>
+     <li><strong>From: </strong><%= message.sender.username %></li>
+     <li><a href= '/users/<%= message.sender.id %>'><strong>Reply</strong></a></li>
    <% end %>
  </ul>
 

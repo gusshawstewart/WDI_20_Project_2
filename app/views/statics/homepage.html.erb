@@ -1,45 +1,63 @@
 
-<div class= "container">
+
 
 <h1>BABEL</h1>
-<h2> Learn a new language with new friends</h2>
+
 
     <% if current_user == nil %>
-    <button type="button" class="btn btn-primary btn-lg custom"><%= link_to "Register", new_user_registration_path %></button>
-    <div class= "blurb-container">
-       <h3 class= init>The new way to connect with those who want to learn or share a langauge. Register now to be matched with like-minded people with a passion for language. </h3>
-    </div>
 
+    <h2 class = "homepage-subtitle"> Learn a new language with new friends</h2>
+
+    <button type="button" class="btn btn-primary btn-lg custom"><%= link_to "Register", new_user_registration_path %></button>
+    
+    <div class="row">
+    <!-- <div class="col-lg-6"> -->
+      <div class= "blurb-container">
+         <h3 class= "initial-blurb">The new way to connect with those who want to learn or share a langauge. Register now to be matched with like-minded people with a passion for language. </h3>
+       </div>
+     </div>
+   </div>
 
     <% else%>
+   
+    <h2> Click on someone you would like to connect with to teach you a language. </h2>
 
-      <h2>People who could teach you</h2>    
+<div class= "row no-gutter">
       <% @teachers.each do |user| %>
-        <div>
-        <ul>
+        <div class="col-sm-12 col-md-4 person" style="background-image: url('/uploads/user/graffiti_image/14/8bit_tv.jpg')">
+         
+          <div class="info">
+          <div class="vertical-center">
               <h3><a href= '/users/<%= user.id %>'><%= user.username %></a></h3>
-              <h5>Speaks:</h5>
+                  
               <span>
                 <% user.languages.each do |language| %>
-                  <%= language.language %>,
+                  <%= language.language %> 
                 <% end %>
               </span>
+              </div>
+              </div>
             </div>
           <% end %>
-        </ul> 
-      <h2>People who could learn from you</h2>
+</div>
+
+<h2> Click on someone you would like to connect with to teach you a language. </h2>  
+<div class= "row no-gutter">
       <% @learners.each do |user| %>
-        <div>
+       <div class="col-sm-12 col-md-4 person" style="background-image: url('/uploads/user/graffiti_image/14/8bit_tv.jpg')">     
+        <div class="info">
+          <div class="vertical-center">
           <h3><a href= '/users/<%= user.id %>'><%= user.username %></a></h3>
           <h5>Speaks:</h5>
           <span>
             <% user.languages.each do |language| %>
-              <%= language.language %>,
+              <%= language.language %>
             <% end %>
           </span>
+          </div>
+          </div>
         </div>
-      <% end %>
-  
+      <% end %> 
+</div>  
     <% end %>
 
-  </div>
