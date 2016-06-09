@@ -1,15 +1,22 @@
 
 <div class= "container">
+
+<h1>BABEL</h1>
 <h2> Learn a new language with new friends</h2>
 
     <% if current_user == nil %>
-        <button type="button" class="btn btn-primary btn-lg"><%= link_to "Register", new_user_registration_path %></button>
+    <button type="button" class="btn btn-primary btn-lg custom"><%= link_to "Register", new_user_registration_path %></button>
+    <div class= "blurb-container">
+       <h3 class= init>The new way to connect with those who want to learn or share a langauge. Register now to be matched with like-minded people with a passion for language. </h3>
+    </div>
+
+
     <% else%>
 
       <h2>People who could teach you</h2>    
       <% @teachers.each do |user| %>
         <div>
-        <ul c>
+        <ul>
               <h3><a href= '/users/<%= user.id %>'><%= user.username %></a></h3>
               <h5>Speaks:</h5>
               <span>
