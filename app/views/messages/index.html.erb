@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class="user">
 <h1>Listing Messages</h1>
 
 <h3>Inbox</h3>
- <ul>
+ <ul class="message-container">
    <% current_user.received_messages.each do |message| %>
      <li class = "content"><%= message.content %></li>
      <li><strong>From: </strong><%= message.sender.username %></li>
@@ -13,14 +14,14 @@
 
 
 <h3> Sent Items</h3>
- <ul>
+ <ul class="message-container">
    <% current_user.sent_messages.each do |message| %>
      <li class="content"><%= message.content %></li>
      <li><%= message.receiver.username %></li> 
    <% end %>
  </ul>
 
-
+</div>
 
 
 

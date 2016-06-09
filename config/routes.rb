@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'languages/interest/:id', to: "languages#interest", as: "interested"
   get 'languages/remove_interest/:id', to: "languages#remove_interest", as: "removed_interest"
   get 'users/:id', to: "users#show"
+  
 
   resources :messages
   get 'messages/show'

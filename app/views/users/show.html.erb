@@ -1,51 +1,38 @@
 <div class="user">
-        <h1>
-          <strong>User:</strong>
-          <%= @user.username %>
-        </h1>
-
-        <p>
-          <strong>Profile Picture:</strong>
-          <%= @user.profile_picture %>
-        </p>
-
-
-        <p>
-          <b>Image:</b>
-          <%= image_tag @user.graffiti_image.url %>
-        </p>
-
-        <p>
-          <strong>About:</strong>
-          <%= @user.bio %>
-        </p>
-
-        <p>
-          <strong>Language Spoken:</strong>
-          <%= @user.language_spoken %>
-        </p>
-
-        <p>
-          <strong>Contact:</strong>
-          <%= @user.email %>
-        </p>
-
-        <ul>
-          <% @user.languages.each do |lang| %>
-            <li><%= lang.language %></li>
-          <% end %>
-        </ul>
-
-        <ul>
-          <% @user.learning.each do |learn| %>
-            <li><%= learn.language %></li>
-          <% end %>
-        </ul>
-
+  <p>
+    <b> </b>
+    <%= image_tag @user.graffiti_image.url %>
+  </p>
+  <div class="user-detail">
+    <h1>
+      <strong>User:</strong>
+      <%= @user.username %>
+    </h1>
+    <div class="detail">
+      <p>
+        <strong>About:</strong>
+        <%= @user.bio %>
+      </p>
+      <p>
+        <strong>Contact:</strong>
+        <%= @user.email %>
+      </p>
+      <ul>
+        <% @user.languages.each do |lang| %>
+        <li><strong>Speaks: </strong><%= lang.language %></li>
+        <% end %>
+      </ul>
+      <ul>
+        <% @user.learning.each do |learn| %>
+        <li><strong>Learning: </strong><%= learn.language %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
 
 <% unless current_user == User.find(params[:id]) %>
-  <%= render 'messages/form' %>
+<%= render 'messages/form' %>
 <% end %>
 
 

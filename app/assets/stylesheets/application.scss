@@ -15,20 +15,34 @@
  *= require_tree .
  *= require_self
  */
+
+ 
+
+
  body {
 
-   // background-image: url("http://i.telegraph.co.uk/multimedia/archive/03589/Wellcome_Image_Awa_3589699k.jpg");
-  background-repeat:no-repeat;
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  -o-background-size:cover;
-  background-size:cover;
-  background-position:center;
+   background-image: url("lyrebird.jpg");
+   background-repeat:no-repeat;
+   -webkit-background-size:cover;
+   -moz-background-size:cover;
+   -o-background-size:cover;
+   background-size:cover;
+   background-position:center;
 
-  font-family: 'Titillium Web', sans-serif;
-  text-align: center;
+   font-family: 'Titillium Web', sans-serif;
+   text-align: center;
+
  }
 
+
+a:visited {
+  color: #fff;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
 
  li.message-count {
   margin-left: -25px;
@@ -57,17 +71,22 @@ li.message-count a span {
 
 .custom {
 
-  margin-bottom: 35px
+  margin-bottom: 35px;
+  text-decoration: white;
+  color: white;
 
 }
 
 .initial-blurb {
-font-size: 20px;
-color: white;
+  font-size: 20px;
+  color: white;
 }
 
 .homepage-subtitle {
 
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 1px black;
   margin-bottom: 35px;
 }
 
@@ -78,8 +97,8 @@ color: white;
 }
 
 .no-gutter > [class*='col-'] {
-    padding-right:0;
-    padding-left:0;
+  padding-right:0;
+  padding-left:0;
 }
 
 .info {
@@ -101,23 +120,23 @@ color: white;
 }
 
 .info a {
-color: white;
-text-decoration: none;
-text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .person {
-position: relative;
-background-size: cover;
-min-height: 250px;
-background-position: center center;
+  position: relative;
+  background-size: cover;
+  min-height: 250px;
+  background-position: center center;
 
 }
 
 .vertical-center {
   position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 li {
@@ -125,10 +144,97 @@ li {
 }
 
 .user {
-  position: relative;
+
   background-size: cover;
-  background-color: blue;
-  width: 100%;
-  height: 100%;
+  background-color: rgba(180, 180, 200, 0.7);
+  padding: 25px ;
+  margin: 40px;
+  color: white;
+
+  img {
+   padding:1px;
+   border:1px solid white;
+   border-radius: 25px;
+   max-height: 250px;
+   max-width: 250px
+ }
+}
+
+input[type="file"] {
+  margin: 0 auto;
+  padding-left: 120px;
+}
+
+.language {
+    width:100%;
+    height: 100%;
+  }
+
+  .checkbox-container {
+    background-color: rgba(0, 0, 0, 0.7);
+
+    .languages_spoken, .want_to_learn {
+      display: inline-block;
+      margin: 15px;
+    }
+  }
+
+  // .languages_spoken {
+
+  //   float:left;
+  //    display:inline-block;
+  //    width: 100px;
+  //    height: 100%;
+  //    text-align: left;
+
+  //    .field {
+  //     font-size: 15px;
+  //    }
+  // }
+
+  // .want_to_learn{
+  //   float:right;
+  //      display:inline-block;
+  //      width: -moz-calc(100% - 100px);
+  //      width: -webkit-calc(100% - 100px);
+  //      width: calc(100% - 100px);
+  //      height: 100%;
+  //      text-align: right;
+
+  //      .field {
+  //       font-size: 15px;
+  //      }
+
+  // }
+
+.field-password {
+
+  color: black;
+}
+
+  .actions {
+    clear: both;
+  }
+
+
+  .message-container {
+    text-align: left;
+    width: 260px;
+    margin: 0 auto;
+  }
+
+.instruction {
+ font-size: 30px;
+ color: white;
+ text-shadow: 1px 1px black;
+  margin: 97px;
+}
+
+
+.logo {
+font-size: 125px;
+color: white;
+text-shadow: 1px 1px black;
 
 }
+
